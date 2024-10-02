@@ -13,7 +13,7 @@ class Encryption
         System.out.println("Original Senence: "+s);
         System.out.println("Move: "+ move);
         System.out.println("Encrypt: "+encrypt);
-    }
+    }//Main Function
     String encrypt(String s,int n)
     {
         String result ="";
