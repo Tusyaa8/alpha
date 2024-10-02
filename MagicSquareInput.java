@@ -30,42 +30,31 @@ class MagicSquareInput
     }
     void generateMagic()
     {
-        int magic =2;int i=0,j =length/2;
-        a[i][j]=1;
-        while(magic<=(length*length))
+        int i=0,j =length/2;
+        for(int magic =1;magic<=length*length;magic++)
         {
-            if((i-1)==-1)
+            a[i][j]=magic;
+            if(magic%length==0)
             {
-                int y=j;
-                i=length-1;j++;
-                if(j>=length&&a[i][0]!=0)
-                {
-                    j=0;a[i][j]=magic;magic++;
-                }
-                else if(j<length&&a[i][j]!=0)
-                {
-                    a[i][j]=magic;magic++;
-                }
-                else if(j<length&&a[i][j]==0)
-                {
-                    a[i][y]=magic;magic++;
-                }
+                i++;
             }
             else
             {
-                int x =i,y=j;
-                i--;j++;
-                if(j>=length&&a[i][0]!=0)
+                if(i==0)
                 {
-                    j=0;a[i][j]=magic;magic++;
+                    i=length-1;
                 }
-                else if(j<length&&a[i][j]!=0)
+                else
                 {
-                    a[i][j]=magic;magic++;
+                    i--;
                 }
-                else if(j<length&&a[i][j]==0)
+                if(j==length-1)
                 {
-                    a[x][y]=magic;magic++;
+                    j=0;
+                }
+                else
+                {
+                    j++;
                 }
             }
         }

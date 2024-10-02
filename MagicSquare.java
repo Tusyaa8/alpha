@@ -80,6 +80,14 @@ class MagicSquare
                         isMagic = false;
                     }
                 }
+                else
+                {
+                    isMagic = false;
+                }
+            }
+            else
+            {
+                isMagic =false;
             }
             sumR=0;sumC=0;sumLd=0;sumRd=0;
         }
