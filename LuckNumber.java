@@ -12,22 +12,12 @@ class LuckNumber
         {
             a[i] = i+1;
         }
-        for(int i=0;i<a.length;i++)
+        int k =2;
+        while(k<a.length)
         {
-            if((i+1)%2==0)
-            {
-                a[i]=0;
-            }
+            a = ob.delI(a,k);
+            a = ob.del(a);k++;
         }
-        a= ob.del(a);
-        for(int i=0;i<a.length;i++)
-        {
-            if((i+1)%3==0)
-            {
-                a[i]=0;
-            }
-        }
-        a= ob.del(a);
         for(int i=0;i<a.length;i++)
         {
             if(a[i]!=0)
@@ -47,5 +37,16 @@ class LuckNumber
             }
         }
         return k;
+    }
+    int[] delI(int a[],int k)
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            if((i+1)%k==0)
+            {
+                a[i]=0;
+            }
+        }
+        return a;
     }
 }
