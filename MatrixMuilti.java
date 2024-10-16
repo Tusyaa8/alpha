@@ -1,6 +1,17 @@
 import java.util.*;
 class MatrixMuilti
 {
+    void print(int a[][])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=0;j<a[0].length;j++)
+            {
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
     public static void main()
     {
         Scanner sc = new Scanner(System.in);
@@ -21,6 +32,9 @@ class MatrixMuilti
         System.out.println("Enter Elements");
         int m2[][] = new int[r1][c1];
         m2 = ob.input(m2);
+        ob.print(m1);
+        System.out.println();
+        ob.print(m2);
         if(c1==r2)
         {
 
